@@ -1,7 +1,9 @@
 body {
+	padding: 3em;
     background-color: white;
 }
 
-.hello {
-    color: blue;
-  }
+ul {
+    list-style-type: none;
+	width: 30em;
+}
