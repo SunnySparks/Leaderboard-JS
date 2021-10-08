@@ -4,11 +4,11 @@ const gameID = '6mi2WimEXfqkQBRDCbJa';
 const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameID}/scores/`;
 const wrapper = document.getElementById('leaderboard-cont');
 
-function searchID(id) {
+searchID = (id) => {
   return document.getElementById(id);
 }
 
-async function fillRank() {
+fillRank = () => {
   try {
     const fetching = await fetch(url);
     const res = await fetching.json();
@@ -40,7 +40,7 @@ async function fillRank() {
   }
 }
 
-async function sendToApi() {
+const sendToApi = async () => {
   const user = searchID('user').value;
   const score = searchID('score').value;
   const userData = { user, score };
