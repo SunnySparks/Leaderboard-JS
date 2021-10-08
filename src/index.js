@@ -64,35 +64,34 @@ let fillRank = () => {
     })
     .then( data =>  {
        let result = Object.entries(data);
-       let leaderboard = result[0][1]
-       console.log(result, typeof result);
-       console.log(data);
-       console.log(result[0][1], leaderboard);
+       let leaderboard = data.result;
+       console.log(data.result);
+       //console.log(result, typeof result);
+       //console.log(data);
+       //console.log(result[0][1], leaderboard);
     
-       leaderboard.forEach(element => {
-        let index = leaderboard.indexOf(element);
-    
+       leaderboard.forEach((element, index) => {
+        var liElement = document.createElement('li');
+        var liDiv = document.createElement('div');
+        var liParagraph = document.createElement('p');
+
+        console.log(index);
         if (index % 2 == 0){
-            wrapper.innerHTML += `
-                <li class="p-1">
-                    <div>
-                        <p>
-                        ${element.user}: 
-                        ${element.score}
-                    </p>
-                </div>
-            </li>`
+            liDiv.classList.add('p-1');
+            liParagraph.innerHTML += `
+                ${element.user}: 
+                ${element.score}`
         }else{
-            wrapper.innerHTML += `
-                <li class="bg-light p-1">
-                    <div>
-                        <p>
-                            ${element.user}: 
-                            ${element.score}
-                        </p>
-                    </div>
-                </li>`
-        }        
+            liDiv.classList.add('bg-light', 'p-1');
+            liParagraph.innerHTML += `
+                ${element.user}: 
+                ${element.score}`
+        }
+        
+        liDiv.appendChild(liParagraph);
+        liElement.appendChild(liDiv);
+        wrapper.appendChild(liElement);
+
     });
     })
 }
@@ -139,14 +138,14 @@ form.addEventListener('submit', function(e){
     })
     .then( data =>  {
         //console.log(data);
-        console.log(userData);
+        //console.log(userData);
     })
 });
 
 
 
 
-
+/*
 const handleGetGames = async () => {
     try {
         const result = fetch(url);
@@ -157,7 +156,7 @@ const handleGetGames = async () => {
       throw new Error(error.message);
     }
   };
-
+*/
 
 window.onload = function() {
     fillRank();
