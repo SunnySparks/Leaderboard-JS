@@ -4,11 +4,11 @@ const gameID = '6mi2WimEXfqkQBRDCbJa';
 const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameID}/scores/`;
 const wrapper = document.getElementById('leaderboard-cont');
 
-searchID = (id) => {
+const searchID = (id) => {
   return document.getElementById(id);
 }
 
-fillRank = () => {
+const fillRank = async () => {
   try {
     const fetching = await fetch(url);
     const res = await fetching.json();
