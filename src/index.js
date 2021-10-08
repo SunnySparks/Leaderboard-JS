@@ -4,9 +4,7 @@ const gameID = '6mi2WimEXfqkQBRDCbJa';
 const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameID}/scores/`;
 const wrapper = document.getElementById('leaderboard-cont');
 
-const searchID = (id) => {
-  return document.getElementById(id);
-}
+const searchID = (id) => document.getElementById(id);
 
 const fillRank = async () => {
   try {
@@ -38,7 +36,7 @@ const fillRank = async () => {
   } catch (error) {
     throw new Error(error.message);
   }
-}
+};
 
 const sendToApi = async () => {
   const user = searchID('user').value;
@@ -56,7 +54,7 @@ const sendToApi = async () => {
   } catch (error) {
     throw new Error(error.message);
   }
-}
+};
 
 const refresh = document.getElementById('refresh');
 refresh.addEventListener('click', () => {
