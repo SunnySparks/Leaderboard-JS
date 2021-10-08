@@ -117,16 +117,30 @@ fetch(url, {
    console.log(result[0][1], leaderboard);
 
    leaderboard.forEach(element => {
-    console.log(element);
-    wrapper.innerHTML += `
-    <li class="p-1">
-        <div>
-            <p>
-                ${element.user}: 
-                ${element.score}
-            </p>
-        </div>
-    </li>`
+    let index = leaderboard.indexOf(element);
+
+    if (index % 2 == 0){
+        wrapper.innerHTML += `
+            <li class="p-1">
+                <div>
+                    <p>
+                    ${element.user}: 
+                    ${element.score}
+                </p>
+            </div>
+        </li>`
+    }else{
+        wrapper.innerHTML += `
+            <li class="bg-light p-1">
+                <div>
+                    <p>
+                        ${element.user}: 
+                        ${element.score}
+                    </p>
+                </div>
+            </li>`
+    }
+    
 });
 })
 
