@@ -56,6 +56,53 @@ function addUsers() {
 
 */
 
+let fillRank = () => {
+    fetch(url, {
+    })
+    .then( res => {
+        return res.json()
+    })
+    .then( data =>  {
+       let result = Object.entries(data);
+       let leaderboard = result[0][1]
+       console.log(result, typeof result);
+       console.log(data);
+       console.log(result[0][1], leaderboard);
+    
+       leaderboard.forEach(element => {
+        let index = leaderboard.indexOf(element);
+    
+        if (index % 2 == 0){
+            wrapper.innerHTML += `
+                <li class="p-1">
+                    <div>
+                        <p>
+                        ${element.user}: 
+                        ${element.score}
+                    </p>
+                </div>
+            </li>`
+        }else{
+            wrapper.innerHTML += `
+                <li class="bg-light p-1">
+                    <div>
+                        <p>
+                            ${element.user}: 
+                            ${element.score}
+                        </p>
+                    </div>
+                </li>`
+        }        
+    });
+    })
+}
+
+const refresh = document.getElementById('refresh');
+refresh.addEventListener('click', function(e){
+    console.log('click?');
+    wrapper.innerHTML = '';
+    fillRank();
+})
 
 const form = document.getElementById('form');
 form.addEventListener('submit', function(e){
@@ -97,52 +144,7 @@ form.addEventListener('submit', function(e){
 });
 
 
-fetch(url, {
-})
-.then( res => {
-    return res.json()
-})
-.then( data =>  {
-    //console.log(data);
-    console.log('This is the result', data, typeof data);
-    /*
-    data.forEach(element => {
-        console.log(element);
-    });
-    */
-   let result = Object.entries(data);
-   let leaderboard = result[0][1]
-   console.log(result, typeof result);
-   console.log(data);
-   console.log(result[0][1], leaderboard);
 
-   leaderboard.forEach(element => {
-    let index = leaderboard.indexOf(element);
-
-    if (index % 2 == 0){
-        wrapper.innerHTML += `
-            <li class="p-1">
-                <div>
-                    <p>
-                    ${element.user}: 
-                    ${element.score}
-                </p>
-            </div>
-        </li>`
-    }else{
-        wrapper.innerHTML += `
-            <li class="bg-light p-1">
-                <div>
-                    <p>
-                        ${element.user}: 
-                        ${element.score}
-                    </p>
-                </div>
-            </li>`
-    }
-    
-});
-})
 
 
 const handleGetGames = async () => {
@@ -155,3 +157,8 @@ const handleGetGames = async () => {
       throw new Error(error.message);
     }
   };
+
+
+window.onload = function() {
+    fillRank();
+};
