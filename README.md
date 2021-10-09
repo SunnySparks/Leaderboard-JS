@@ -4,7 +4,7 @@
 
 > A leaderboard app made in javascript
 
-![screenshot](thumbnail.png)
+![screenshot](screen.png)
 
 Submit your high score and let your friends see it
 
