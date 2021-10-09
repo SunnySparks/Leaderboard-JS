@@ -5,47 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;1,900&display=swap" rel="stylesheet">
+
     <title>JavaScript Leaderboard</title>
 </head>
 <body>
-    <h1>Leaderboard</h1>
-    <section class="p-3 ml-auto mr-auto">
+    <h1 class="text-center">LEADERBOARD</h1>
+    <div class="p-4"></div>
+    <section class="p-3 ml-auto mr-auto container">
 
-        <div id="elem"></div>
-        <div id="api"></div>
-
-        <div class="mr-auto ml-auto row">
+        <div class="mr-auto ml-auto d-flex justify-content-around">
             <div class="mr-2">
-            <div class="row justify-content-md-center p-2">
-                <h4 class="p-1">Recent Scores</h4>
-                <button type="submit" class="p-0" id="refresh" >Refresh</button>
+                <div class="row justify-content-around p-4" id="subtitle">
+                    <h4 class="">RECENT SCORES</h4>
+                    <button type="submit" class="p-1" id="refresh" >REFRESH</button>
+                </div>
+                <div class="p-3">
+                    <ul class="border border-dark border-3 p-0 m-0" id="leaderboard-cont">
+                    </ul>
+                </div>
             </div>
-            <div class="p-1">
-                <ul class="border border-dark border-3 p-0 m-0" id="leaderboard-cont">
-                </ul>
-            </div>
-            </div>
-            <div class="p-1 ml-2">
-                <h4>Add your score</h4>
+            <div class="p-5 ml-2 float-right" id="score-cont">
+                <h4 class="pb-4">ADD YOUR SCORE</h4>
                 <form id="form">
-                    <div class="form-group">
+                    <div class="form-group pt-3 pb-3">
                         <input type="text" id="user" name="user" placeholder="Your name" class="form-control"><br>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group pt-3 pb-3">
                         <input type="text" id="score" name="score" placeholder="Your score" class="form-control">
                     </div>
-                    <div class="form-group">
-                    <button type="submit" class="p-1">Submit</button>
+                    <div class="form-group pt-3 pb-3">
+                        <button type="submit" class="p-1">SUBMIT</button>
                     </div>
                 </form>
             </div>
         </div>
-    </section>
-    <section class="p-3">
-
-    </section>
-    <section>
 
     </section>   
 </body>
 </html>
+
+Illustration by <a href="https://icons8.com/illustrations/author/6023ee3f123f99199963c90f">  Elizaveta Guba</a> from <a href="https://icons8.com/illustrations">Ouch!</a>

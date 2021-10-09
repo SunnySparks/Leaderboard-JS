@@ -1,4 +1,5 @@
 import './style.css';
+import Bg from './bg.png';
 
 const gameID = '6mi2WimEXfqkQBRDCbJa';
 const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameID}/scores/`;
@@ -16,14 +17,15 @@ const fillRank = async () => {
       const liElement = document.createElement('li');
       const liDiv = document.createElement('div');
       const liParagraph = document.createElement('p');
+      liParagraph.classList.add('p-1');
 
       if (index % 2 === 0) {
-        liDiv.classList.add('p-1');
+        liDiv.classList.add('white-bg', 'p-1');
         liParagraph.innerHTML += `
                     ${element.user}: 
                     ${element.score}`;
       } else {
-        liDiv.classList.add('bg-light', 'p-1');
+        liDiv.classList.add('light-bg', 'p-1');
         liParagraph.innerHTML += `
                     ${element.user}: 
                     ${element.score}`;

@@ -1,9 +1,87 @@
+h1{
+  color: black;
+  text-shadow:
+    0 0 7px rgb(245, 234, 249),
+    0 0 10px rgb(245, 234, 249),
+    0 0 21px rgb(245, 234, 249),
+    0 0 42px rgb(245, 234, 249),
+    0 0 82px rgb(245, 234, 249),
+    0 0 92px rgb(245, 234, 249),
+    0 0 102px rgb(31, 121, 240),
+    0 0 151px rgb(31, 121, 240);
+}
+
+h1,
+button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+h4 {
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
   padding: 3em;
-  background-color: white;
+  /*background-color: rgb(254, 204, 65);
+  color: rgb(221, 106, 244);
+  background: linear-gradient(159deg, rgba(254,255,65,1) 7%, rgba(229,143,145,1) 51%, rgba(221,106,244,0.8681818181818182) 100%);*/
+  background-color: rgba(151, 74, 167, 0.356);
+  background-image: url('./bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  
 }
 
 ul {
   list-style-type: none;
   width: 30em;
+}
+
+#leaderboard-cont{
+ max-height: 40em;
+ overflow-y: scroll;
+}
+
+#subtitle,
+#score-cont{
+  background-color: rgba(245, 234, 249, 0.747);
+  max-height: 25em;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.light-bg{
+  background-color: rgba(31, 121, 240, 0.747);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.white-bg {
+  background-color: rgba(255, 255, 255, 0.747);
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.form-control {
+  background-color: rgb(254, 204, 65);
+  border: rgb(254, 204, 65);
+  max-height: 50em;
+}
+
+input,
+ul {
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+button {
+  background-color: rgb(31, 121, 240);
+  color: white;
+}
+
+button:hover {
+  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+  animation: blinker 1s linear infinite;
 }
