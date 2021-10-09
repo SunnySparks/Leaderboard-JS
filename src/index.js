@@ -13,7 +13,17 @@ const fillRank = async () => {
     const res = await fetching.json();
     const data = res;
     const leaderboard = data.result;
-    leaderboard.forEach((element, index) => {
+    let arr = [];
+
+    leaderboard.forEach(element => {
+      arr.push([element.user, element.score]);
+    });
+    arr.sort(function(a, b) {
+      return a[1] - b[1];
+  });
+  const reversed = arr.reverse();
+  reversed.forEach((element, index) => {
+
       const liElement = document.createElement('li');
       const liDiv = document.createElement('div');
       const liParagraph = document.createElement('p');
@@ -22,19 +32,19 @@ const fillRank = async () => {
       if (index % 2 === 0) {
         liDiv.classList.add('white-bg', 'p-1');
         liParagraph.innerHTML += `
-                    ${element.user}: 
-                    ${element.score}`;
+        ${element[0]}: 
+        ${element[1]}`;
       } else {
         liDiv.classList.add('light-bg', 'p-1');
         liParagraph.innerHTML += `
-                    ${element.user}: 
-                    ${element.score}`;
+        ${element[0]}: 
+        ${element[1]}`;
       }
 
       liDiv.appendChild(liParagraph);
       liElement.appendChild(liDiv);
       wrapper.appendChild(liElement);
-    });
+    })
   } catch (error) {
     throw new Error(error.message);
   }

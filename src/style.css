@@ -24,9 +24,6 @@ h4 {
 
 body {
   padding: 3em;
-  /*background-color: rgb(254, 204, 65);
-  color: rgb(221, 106, 244);
-  background: linear-gradient(159deg, rgba(254,255,65,1) 7%, rgba(229,143,145,1) 51%, rgba(221,106,244,0.8681818181818182) 100%);*/
   background-color: rgba(151, 74, 167, 0.356);
   background-image: url('./bg.png');
   background-size: cover;
@@ -40,7 +37,7 @@ ul {
 }
 
 #leaderboard-cont{
- max-height: 40em;
+ max-height: 41.5em;
  overflow-y: scroll;
 }
 
