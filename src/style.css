@@ -1,4 +1,4 @@
-h1{
+h1 {
   color: black;
   text-shadow:
     0 0 7px rgb(245, 234, 249),
@@ -28,7 +28,6 @@ body {
   background-image: url('./bg.png');
   background-size: cover;
   background-repeat: no-repeat;
-  
 }
 
 ul {
@@ -36,19 +35,19 @@ ul {
   width: 30em;
 }
 
-#leaderboard-cont{
- max-height: 41.5em;
- overflow-y: scroll;
+#leaderboard-cont {
+  max-height: 41.5em;
+  overflow-y: scroll;
 }
 
 #subtitle,
-#score-cont{
+#score-cont {
   background-color: rgba(245, 234, 249, 0.747);
   max-height: 25em;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
 }
 
-.light-bg{
+.light-bg {
   background-color: rgba(31, 121, 240, 0.747);
   color: white;
   font-family: 'Poppins', sans-serif;
